@@ -1,0 +1,14 @@
+<div><%= @user.first_name %> is a member of the following libraries</div>
+
+
+	<% @libraries.each do |lib| %>
+	<div>
+	<ul>
+		<li><%= lib.name %></li>
+	</ul>
+		<% if @current_user %>
+			<%= button_to "Join", library_users_path(lib) %>
+	<% end %>
+	</div>
+	<br>
+	<% end %>
